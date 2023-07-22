@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block data %}
+<div class="container mt-5">
+    <h1>View All Food Items</h1>
+    <hr>
+    <div class="row p-3 text-right">
+        <div class="col-4 disable"></div>
+        <div class="col-4 disable"></div>
+        <div class="col-4"><a href="/food" class="btn btn-primary">+ ADD ITEM IN FOOD</a></div>
+        </div>
+    <div class="row">
+        {% for d in data%}
+        <div class="col-4 p-1">            
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="static/images/{{d.fimg}}" alt="Card image cap">
+                <div class="card-body">                
+                  <h5 class="card-title">{{d.fname}}</h5>
+                  <h5>{{d.fqty}}</h5>
+                  <p class="card-text">{{d.fdetails}}</p>
+                  <a href="/edit/{{d.id}}" class="btn btn-secondary btn-sm">Edit</a>
+                  <a href="/delete/{{d.id}}" class="btn btn-secondary btn-sm">Delete</a>                       
+                </div>
+              </div>              
+        </div>
+        {% endfor %}
+    </div>
+</div>
+    
+{% endblock data %}

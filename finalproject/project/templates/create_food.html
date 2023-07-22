@@ -1,0 +1,30 @@
+{% include "header.html" %}
+
+<div class="container mt-5">
+  <h1>Add Food Items</h1>
+  <hr>
+  
+<form method="POST" action="/create_food">
+  {% csrf_token %}
+    <div class="form-group">
+      <div class="form-group">
+        <label for="exampleInputPassword1">Food Image</label>
+        <input type="file" class="form-control" placeholder="Food image" name="fimg">
+    </div>
+      <label for="exampleInputEmail1">Food Item Name</label>
+      <input type="text" class="form-control" placeholder="Enter Food Name" name="fname">      
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Food Quantity</label>
+      <input type="number" class="form-control" placeholder="Enter Food Price" name="fqty">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Food category</label>
+        <input type="text" class="form-control" placeholder="Enter Food Details" name="fdetails">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+{% include "footer.html" %}
+    
